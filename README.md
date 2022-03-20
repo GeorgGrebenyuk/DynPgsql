@@ -6,3 +6,7 @@ Transfering model's geometry (2D, 3D) with properties to PostgreSQL with PostGIS
 
 ## Why is Dynamo?
 Selecting Dynamo as enviromental - only my wish to combine approach to getting data in different software (that allow working with Dynamo) to prevention write libraries for each software's product.
+
+## External dependencies
+Nothing :-)
+(only standard Dynamo's ZeroTouch library v.2.12)
