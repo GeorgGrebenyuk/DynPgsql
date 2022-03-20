@@ -2,4 +2,4 @@
 Autodesk Dynamo to PostgreSQL and transfering geometry and attributics data
 
 ## About project
-Transfering model's geometry (2D, 3D) with properties to PostgreSQL with PostGIS addition.
+Transfering model's geometry (2D, 3D) with properties to PostgreSQL with PostGIS addition. As enviromental for export are using Autodesk Design Script's library in Autodesk Dynamo Core (unification all product's Dynamo -- Revit, Civil 3D and non-Autodesk's software where is support COM-acess).
