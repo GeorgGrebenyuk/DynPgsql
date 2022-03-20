@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "DynPgsql": {
-      "commandName": "Executable",
-      "executablePath": "C:\\Work\\DynamoCoreRuntime2.13.1\\DynamoSandbox.exe"
-    }
-  }
-}
