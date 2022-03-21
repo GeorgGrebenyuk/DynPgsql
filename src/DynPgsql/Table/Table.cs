@@ -85,9 +85,8 @@ namespace DynPgsql.Table
                 this.create_command += $"{create_geom_column} {create_geo_index} {create_geo_comment}";
             }
         }
-        public static string GetCreationCommand(Table table)
-        {
-            return table.create_command;
-        }
+
+        
     }
+    
 }
