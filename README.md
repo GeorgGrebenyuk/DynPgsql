@@ -30,7 +30,7 @@ Also there are technical libs:
 # About Using
 ## Sample workings
 
-!(sample_screen)[/docs/image-1.png].
+![sample_screen](/docs/image-1.png).
 
 ## Uploading to Dynamo
 Nowadays package need upload as external library (from Debug's folder in VS's project -- for debugging support). File -> Upload lirary -> selection "DynPgsql.dll"
