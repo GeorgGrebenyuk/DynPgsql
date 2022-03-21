@@ -90,11 +90,7 @@ namespace DynPgsql.Geometry
                 this.comment = comment;
             }
         }
-        public static string GetGeometryRepresentation(bool isCollect, Geometry geometry, int SRID = 0)
-        {
-            if (isCollect) return $"ST_GeomFromText('{geometry.geom}',{SRID})";
-            else return $"ST_GeomFromText('GEOMETRYCOLLECTION({geometry.geom})',{SRID})";
-        }
+
 
     }
     

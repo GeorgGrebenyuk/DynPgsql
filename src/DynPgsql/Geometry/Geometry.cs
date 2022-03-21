@@ -65,7 +65,7 @@ namespace DynPgsql.Geometry
         }
         public Geometry (aj.Mesh m)
         {
-
+            //
         }
     }
    
