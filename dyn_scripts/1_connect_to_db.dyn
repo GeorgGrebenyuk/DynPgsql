@@ -238,36 +238,6 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "DynPgsql.Table.Table.GetCreationCommand@DynPgsql.Table.Table",
-      "Id": "5b9ef2925eb64b5fa7eff4ee1cd8aa03",
-      "Inputs": [
-        {
-          "Id": "df4b57eb764e47e78deeea1918185e5c",
-          "Name": "table",
-          "Description": "Table",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Outputs": [
-        {
-          "Id": "db9ea08bea454379aea14428a9c8fdc2",
-          "Name": "string",
-          "Description": "string",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Auto",
-      "Description": "Table.GetCreationCommand (table: Table): string"
-    },
-    {
-      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
       "FunctionSignature": "DynPgsql.Table.Data_type.Uuid",
       "Id": "18cea4b015184afebe0b74f391debabe",
       "Inputs": [],
@@ -616,11 +586,188 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
+      "FunctionSignature": "DynPgsql.Commands.Commands.TableCreate@DynPgsql.Table.Table",
+      "Id": "c948c68f0610462ab5f3c7c3f2bd6a7e",
+      "Inputs": [
+        {
+          "Id": "949b84682ffd4a3da4681c3764b38e61",
+          "Name": "table",
+          "Description": "Table",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "8fe4f7639a434adf8d47854675bc6592",
+          "Name": "string",
+          "Description": "string",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Commands.TableCreate (table: Table): string"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DynPgsql.Commands.Commands.TableDrop@string",
+      "Id": "41e935c983664a64bbdb6d3dd7fb956c",
+      "Inputs": [
+        {
+          "Id": "76c2ba6dce2c44a6814defad78b3ebeb",
+          "Name": "t_name",
+          "Description": "string",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "0041186a119b4d9c9fc323aaca33df40",
+          "Name": "string",
+          "Description": "string",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Commands.TableDrop (t_name: string): string"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DynPgsql.Connect.RunQuerry@string,string",
+      "Id": "fe38d9d4d4404ce8942f937c5edbc061",
+      "Inputs": [
+        {
+          "Id": "e393af6b2a8d4b43841d75ba90800118",
+          "Name": "sql",
+          "Description": "string",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "0a66734c59b74601b3bb8a95c4f2c113",
+          "Name": "conn_config",
+          "Description": "string",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "5679b87da89f41a49f20367387c5bc5a",
+          "Name": "void",
+          "Description": "void",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Connect.RunQuerry (sql: string, conn_config: string): void"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DynPgsql.Connect.RunQuerry@string,string",
+      "Id": "757bd4ce1cfb4aca8368a27def4dd335",
+      "Inputs": [
+        {
+          "Id": "c09b546741ab49fd8caba415651fa425",
+          "Name": "sql",
+          "Description": "string",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e5ab16cf07f34966b77bb40d7f0e0857",
+          "Name": "conn_config",
+          "Description": "string",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "cb3e0eee90094106a840190a999c15da",
+          "Name": "void",
+          "Description": "void",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Connect.RunQuerry (sql: string, conn_config: string): void"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DynPgsql.Connect.RunQuerry@string,string",
+      "Id": "8f2688eb97d1429883996e0f160da86e",
+      "Inputs": [
+        {
+          "Id": "c8e631817c284bbfb0e1eff09252c176",
+          "Name": "sql",
+          "Description": "string",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "8a6954166c9e4ebc939c88548bdfd3cc",
+          "Name": "conn_config",
+          "Description": "string",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "3ef165f9a9a1400d9f3b679705d7e252",
+          "Name": "void",
+          "Description": "void",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Connect.RunQuerry (sql: string, conn_config: string): void"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
       "FunctionSignature": "DynPgsql.Connect.SaveQuerry@string",
       "Id": "a6e3f65a07ff4b8a9ac0be278772a1b9",
       "Inputs": [
         {
-          "Id": "9d569021a5ec49c7b3bfc915e25c239e",
+          "Id": "c8905c70d67a4d2e81191d9f93c83dc6",
           "Name": "row_sql",
           "Description": "string",
           "UsingDefaultValue": false,
@@ -631,7 +778,7 @@
       ],
       "Outputs": [
         {
-          "Id": "58b85b51bcae48959859e3309e793e68",
+          "Id": "802ff53395c840f5bcfff62ad76b595c",
           "Name": "string",
           "Description": "string",
           "UsingDefaultValue": false,
@@ -644,54 +791,6 @@
       "Description": "Connect.SaveQuerry (row_sql: string): string"
     },
     {
-      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
-      "FunctionSignature": "DynPgsql.Connect.RunQuerry@string,string,string",
-      "Id": "8f2688eb97d1429883996e0f160da86e",
-      "Inputs": [
-        {
-          "Id": "ed09fcc04b3947a893b39965a06159fc",
-          "Name": "path_to_sql",
-          "Description": "string",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "fbb158c01c7b447695a390fb19b1bece",
-          "Name": "path_to_pgsql_dir_bin",
-          "Description": "string",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "ac175558852546078d27bb04dc5192ba",
-          "Name": "conn_config",
-          "Description": "string",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Outputs": [
-        {
-          "Id": "85551b3b62214224b5a1da62d60e505e",
-          "Name": "string",
-          "Description": "string",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Auto",
-      "Description": "Connect.RunQuerry (path_to_sql: string, path_to_pgsql_dir_bin: string, conn_config: string): string"
-    },
-    {
       "ConcreteType": "CoreNodeModels.Input.Directory, CoreNodeModels",
       "HintPath": "C:\\Program Files\\PostgreSQL\\14\\bin",
       "InputValue": "C:\\Program Files\\PostgreSQL\\14\\bin",
@@ -700,7 +799,7 @@
       "Inputs": [],
       "Outputs": [
         {
-          "Id": "3884344eb2d043998deec8604ebf2077",
+          "Id": "29efa3b4744846efbaa505ec7c185428",
           "Name": "",
           "Description": "Путь к каталогу",
           "UsingDefaultValue": false,
@@ -711,28 +810,28 @@
       ],
       "Replication": "Disabled",
       "Description": "Позволяет выбрать папку в системе и получить путь к ней"
-    },
-    {
-      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
-      "NodeType": "CodeBlockNode",
-      "Code": "",
-      "Id": "709a63346b1d4fed8b98d23df2a50d49",
-      "Inputs": [],
-      "Outputs": [],
-      "Replication": "Disabled",
-      "Description": "Обеспечивает возможность непосредственного авторства кода DesignScript"
     }
   ],
   "Connectors": [
     {
       "Start": "d9fce5c0004842568ef6d7d988377a5d",
-      "End": "ac175558852546078d27bb04dc5192ba",
-      "Id": "58227ea24d7c46eaae16b094bb33877a"
+      "End": "0a66734c59b74601b3bb8a95c4f2c113",
+      "Id": "e0ea2876e759499da6e4717bfa8a3880"
+    },
+    {
+      "Start": "d9fce5c0004842568ef6d7d988377a5d",
+      "End": "e5ab16cf07f34966b77bb40d7f0e0857",
+      "Id": "c3bd87b0ab14459b8e57047b8d8665d1"
     },
     {
       "Start": "a2dbd845c1ca4f8684ab2ab96621e837",
       "End": "a1f5a7d46eec4fd0a81bfbef6d55da2b",
       "Id": "ebee7bd6812b407c90583ecfc484357b"
+    },
+    {
+      "Start": "a2dbd845c1ca4f8684ab2ab96621e837",
+      "End": "76c2ba6dce2c44a6814defad78b3ebeb",
+      "Id": "a0cd9ccc98594d469e90d59f836202ee"
     },
     {
       "Start": "e581b40932d242e799efd9d13e31b045",
@@ -771,13 +870,8 @@
     },
     {
       "Start": "3b3b72e775714dba9f335d82bba837ea",
-      "End": "df4b57eb764e47e78deeea1918185e5c",
-      "Id": "8aabbfd877cf42c48dee5a35a55b29d6"
-    },
-    {
-      "Start": "db9ea08bea454379aea14428a9c8fdc2",
-      "End": "9d569021a5ec49c7b3bfc915e25c239e",
-      "Id": "973331300c5e4dddbe7bb604ffec0d21"
+      "End": "949b84682ffd4a3da4681c3764b38e61",
+      "Id": "17139802a6604817b7ff43e6faafdc80"
     },
     {
       "Start": "aa8f544a4f0f4fd7a77d86c3f98f3f8a",
@@ -850,13 +944,23 @@
       "Id": "882336bd9c904773ab003b74ad1b9ae8"
     },
     {
-      "Start": "58b85b51bcae48959859e3309e793e68",
-      "End": "ed09fcc04b3947a893b39965a06159fc",
+      "Start": "8fe4f7639a434adf8d47854675bc6592",
+      "End": "c09b546741ab49fd8caba415651fa425",
+      "Id": "877586e968cb4fc5a54dde4bac0ed47b"
+    },
+    {
+      "Start": "0041186a119b4d9c9fc323aaca33df40",
+      "End": "e393af6b2a8d4b43841d75ba90800118",
+      "Id": "397e393e33d547d5a815c05410f0d747"
+    },
+    {
+      "Start": "802ff53395c840f5bcfff62ad76b595c",
+      "End": "c8e631817c284bbfb0e1eff09252c176",
       "Id": "dbf8e61ed1254b988736e6d7245e1640"
     },
     {
-      "Start": "3884344eb2d043998deec8604ebf2077",
-      "End": "fbb158c01c7b447695a390fb19b1bece",
+      "Start": "29efa3b4744846efbaa505ec7c185428",
+      "End": "8a6954166c9e4ebc939c88548bdfd3cc",
       "Id": "e4d7db0e69734352a029a6ad6a29d0ad"
     }
   ],
@@ -941,16 +1045,6 @@
         "Excluded": false,
         "X": 823.94524711593783,
         "Y": 686.77588599688988
-      },
-      {
-        "ShowGeometry": true,
-        "Name": "Table.GetCreationCommand",
-        "Id": "5b9ef2925eb64b5fa7eff4ee1cd8aa03",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "X": 1151.1583854620048,
-        "Y": 682.6085652585848
       },
       {
         "ShowGeometry": true,
@@ -1054,13 +1148,43 @@
       },
       {
         "ShowGeometry": true,
-        "Name": "Connect.SaveQuerry",
-        "Id": "a6e3f65a07ff4b8a9ac0be278772a1b9",
+        "Name": "Commands.TableCreate",
+        "Id": "c948c68f0610462ab5f3c7c3f2bd6a7e",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1402.9291596751812,
-        "Y": 550.43863557271322
+        "X": 1155.008774927541,
+        "Y": 686.62085395529425
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Commands.TableDrop",
+        "Id": "41e935c983664a64bbdb6d3dd7fb956c",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 581.44279782999149,
+        "Y": 1027.5109117824077
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Connect.RunQuerry",
+        "Id": "fe38d9d4d4404ce8942f937c5edbc061",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 880.84717525997644,
+        "Y": 1030.9473297578029
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Connect.RunQuerry",
+        "Id": "757bd4ce1cfb4aca8368a27def4dd335",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1439.467514065954,
+        "Y": 690.11943810378659
       },
       {
         "ShowGeometry": true,
@@ -1069,8 +1193,18 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1693.1555943430103,
-        "Y": 414.39029442662195
+        "X": 1729.9065244598335,
+        "Y": 371.07669821750875
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Connect.SaveQuerry",
+        "Id": "a6e3f65a07ff4b8a9ac0be278772a1b9",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": true,
+        "X": 1444.7699042856934,
+        "Y": 505.42843453237072
       },
       {
         "ShowGeometry": true,
@@ -1079,18 +1213,8 @@
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
         "Excluded": false,
-        "X": 1352.4770422254257,
-        "Y": 413.254735162172
-      },
-      {
-        "ShowGeometry": true,
-        "Name": "Code Block",
-        "Id": "709a63346b1d4fed8b98d23df2a50d49",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Excluded": false,
-        "X": 2070.0192513204274,
-        "Y": 733.73440678302654
+        "X": 1389.2279723422535,
+        "Y": 369.94113895305873
       }
     ],
     "Annotations": [
@@ -1156,22 +1280,56 @@
         "Title": "getting table's creation command",
         "Nodes": [
           "ebc2b0d2542040f5a683b989635e63ad",
-          "19ee8f2b656e41a38d3bfe7eb9775699",
-          "5b9ef2925eb64b5fa7eff4ee1cd8aa03"
+          "19ee8f2b656e41a38d3bfe7eb9775699"
         ],
         "Left": 273.58039998904246,
-        "Top": 629.6085652585848,
-        "Width": 1081.5779854729624,
-        "Height": 254.16732073830508,
+        "Top": 633.77588599688988,
+        "Width": 810.36484712689548,
+        "Height": 250.0,
         "FontSize": 36.0,
-        "InitialTop": 682.6085652585848,
+        "InitialTop": 686.77588599688988,
         "InitialHeight": 150.77836456338832,
         "TextblockHeight": 43.0,
         "Background": "#FF48B9FF"
+      },
+      {
+        "Id": "ce63ae223d4844e4950d1d767d0b337c",
+        "Title": "pre-deliting table (if its exists)",
+        "Nodes": [
+          "41e935c983664a64bbdb6d3dd7fb956c",
+          "fe38d9d4d4404ce8942f937c5edbc061"
+        ],
+        "Left": 571.44279782999149,
+        "Top": 974.51091178240767,
+        "Width": 537.404377429985,
+        "Height": 175.43641797539522,
+        "FontSize": 36.0,
+        "InitialTop": 1027.5109117824077,
+        "InitialHeight": 152.436417975395,
+        "TextblockHeight": 43.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "5158e324660e484cb1086b52ba95775f",
+        "Title": "for dumps??",
+        "Nodes": [
+          "8f2688eb97d1429883996e0f160da86e",
+          "a6e3f65a07ff4b8a9ac0be278772a1b9",
+          "9641028043a84280952db721bccb8e30"
+        ],
+        "Left": 1379.2279723422535,
+        "Top": 316.94113895305873,
+        "Width": 578.67855211758,
+        "Height": 281.487295579312,
+        "FontSize": 36.0,
+        "InitialTop": 369.94113895305873,
+        "InitialHeight": 258.487295579312,
+        "TextblockHeight": 43.0,
+        "Background": "#FFC1D676"
       }
     ],
-    "X": -1157.7748420970643,
-    "Y": -337.59621125110232,
-    "Zoom": 1.1788248879095209
+    "X": -443.91526172585259,
+    "Y": -106.32321264069697,
+    "Zoom": 0.76188547911560223
   }
 }
