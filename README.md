@@ -26,3 +26,11 @@ Because of I'm using Npgsql (that don't support .NET Framework) -- there are som
 Also there are technical libs:
 1. Npgsql - v 6.0.3;
 2. DynamoVisualProgramming.ZeroTouchLibrary,DynamoVisualProgramming.DynamoServices - v 2.12.0.5650 
+
+# About Using
+## Sample workings
+
+!(sample_screen)[/docs/image-1.png].
+
+## Uploading to Dynamo
+Nowadays package need upload as external library (from Debug's folder in VS's project -- for debugging support). File -> Upload lirary -> selection "DynPgsql.dll"
