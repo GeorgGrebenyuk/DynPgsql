@@ -27,6 +27,8 @@ Also there are technical libs:
 1. Npgsql - v 6.0.3;
 2. DynamoVisualProgramming.ZeroTouchLibrary,DynamoVisualProgramming.DynamoServices - v 2.12.0.5650 
 
+*Note: all of dependencies already configured in project's properties and downloadings via Nuget package manager.*
+
 # About Using
 ## Sample workings
 
