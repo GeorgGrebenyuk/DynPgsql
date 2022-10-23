@@ -15,4 +15,7 @@ Select latest version from  Releases and next (in Dynamo environmenta): ```File 
 
 ## Sample workings
 Look script demo-1_table.with.points.dyn [from that Release](https://github.com/GeorgGrebenyuk/DynPgsql/releases/tag/v1.0.1).
-![sample_screen](/docs/image-1.png).
+![sample_screen](/docs/image-1.png)
+
+The result of script (local SQL-file) import with Query Tool:
+![sample_screen](/docs/image-2.png)
