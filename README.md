@@ -8,9 +8,11 @@ DynamoVisualProgramming.ZeroTouchLibrary,DynamoVisualProgramming.DynamoServices 
 *Note: all of dependencies already configured in project's properties and downloadings via Nuget package manager.*
 
 # About Using
-## Sample workings
-
-![sample_screen](/docs/image-1.png).
+**Attention**: User need create some database in PostgreSQL and run `postgis.sql` from `\contrib\postgis-3.2\`
 
 ## Uploading to Dynamo
 Select latest version from  Releases and next (in Dynamo environmenta): ```File -> Upload lirary -> select DynPgsql.dll```
+
+## Sample workings
+Look script demo-1_table.with.points.dyn [from that Release](https://github.com/GeorgGrebenyuk/DynPgsql/releases/tag/v1.0.1).
+![sample_screen](/docs/image-1.png).
