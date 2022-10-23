@@ -394,54 +394,6 @@
     {
       "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
       "NodeType": "FunctionNode",
-      "FunctionSignature": "DynPgsql.Connect.RunQuerry@string,string,string",
-      "Id": "757bd4ce1cfb4aca8368a27def4dd335",
-      "Inputs": [
-        {
-          "Id": "c09b546741ab49fd8caba415651fa425",
-          "Name": "path_to_sql_file",
-          "Description": "Path to file with sql-querries\n\nstring",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "e5ab16cf07f34966b77bb40d7f0e0857",
-          "Name": "conn_config",
-          "Description": "Configs to connect to database\n\nstring",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        },
-        {
-          "Id": "b5bc1a19079f4d97b36b36cb7582eeec",
-          "Name": "path_to_pgsql_dir_bin",
-          "Description": "Path to bin folder of PostgreSQL\n\nstring\nЗначение по умолчанию : \"C:\\Program Files\\PostgreSQL\\14\\bin\"",
-          "UsingDefaultValue": true,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Outputs": [
-        {
-          "Id": "cb3e0eee90094106a840190a999c15da",
-          "Name": "string",
-          "Description": "string",
-          "UsingDefaultValue": false,
-          "Level": 2,
-          "UseLevels": false,
-          "KeepListStructure": false
-        }
-      ],
-      "Replication": "Auto",
-      "Description": "Running query as sending command to psql.exe by system Postgresql bin folder\n\nConnect.RunQuerry (path_to_sql_file: string, conn_config: string, path_to_pgsql_dir_bin: string = \"C:\\Program Files\\PostgreSQL\\14\\bin\"): string"
-    },
-    {
-      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
-      "NodeType": "FunctionNode",
       "FunctionSignature": "DynPgsql.Connect.CreateConnectSettings@string,string,string,string,string",
       "Id": "1d7b9eb65c98431a81c4be1e94c7067f",
       "Inputs": [
@@ -1026,19 +978,9 @@
       "Id": "148c3c1bfdaf4efe934371faa87ec2c6"
     },
     {
-      "Start": "9f4718d61a6842f1a9b20e73ce5d744d",
-      "End": "e5ab16cf07f34966b77bb40d7f0e0857",
-      "Id": "94d5d74ea9714519a73a209552d3f2ab"
-    },
-    {
       "Start": "8a7790f141e14bccab266409f215ff11",
       "End": "4098294a1f124ecbb29e71bb355c9332",
       "Id": "2ff313c786f543d1a383623051d477a1"
-    },
-    {
-      "Start": "8f909eec42d74897bc81453eb90d5afb",
-      "End": "c09b546741ab49fd8caba415651fa425",
-      "Id": "183b789fff00499faa242cffa3c8d31d"
     },
     {
       "Start": "2882bf7fe6af4741a9bb5f38ee4bd696",
@@ -1234,16 +1176,6 @@
         "Y": 943.65495571831354
       },
       {
-        "Id": "757bd4ce1cfb4aca8368a27def4dd335",
-        "IsSetAsInput": false,
-        "IsSetAsOutput": false,
-        "Name": "Connect.RunQuerry",
-        "ShowGeometry": true,
-        "Excluded": false,
-        "X": 2657.3159904389704,
-        "Y": 743.75394909868783
-      },
-      {
         "Id": "1d7b9eb65c98431a81c4be1e94c7067f",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
@@ -1260,8 +1192,8 @@
         "Name": "Merge sql's",
         "ShowGeometry": true,
         "Excluded": false,
-        "X": 1965.8543620549431,
-        "Y": 787.15120744725357
+        "X": 1959.6447812846391,
+        "Y": 895.197912850548
       },
       {
         "Id": "2f12de9832044958b45af70d0d091d35",
@@ -1270,8 +1202,8 @@
         "Name": "Connect.SaveQuerry",
         "ShowGeometry": true,
         "Excluded": false,
-        "X": 2387.178858336395,
-        "Y": 752.55725919538941
+        "X": 2419.4686783419775,
+        "Y": 1009.6339030859864
       },
       {
         "Id": "6aa58b2cea904f43ae5c75a5e421d042",
@@ -1360,18 +1292,18 @@
         "Name": "Code Block",
         "ShowGeometry": true,
         "Excluded": false,
-        "X": 1726.5230562493286,
-        "Y": 1193.2844143681691
+        "X": 1702.8257096517143,
+        "Y": 1156.6612423536742
       },
       {
         "Id": "226b67a6c70240e18cc7087ab0c70e6c",
         "IsSetAsInput": false,
         "IsSetAsOutput": false,
-        "Name": "List.Join",
+        "Name": "Add INSERT statement",
         "ShowGeometry": true,
         "Excluded": false,
-        "X": 2225.1349614990072,
-        "Y": 933.59976473659754
+        "X": 2171.73256687439,
+        "Y": 1008.114733980249
       },
       {
         "Id": "637c2ac199864792bbafc54726f0eede",
@@ -1460,18 +1392,18 @@
       },
       {
         "Id": "ec8baea6bb35478984c661f310922634",
-        "Title": "Saving single querries to *.sql file and running it with psql.exe",
+        "Title": "Saving single querries to *.sql file",
         "Nodes": [
-          "757bd4ce1cfb4aca8368a27def4dd335",
           "b83df84f565b4625b3510c38beb0d30b",
-          "2f12de9832044958b45af70d0d091d35"
+          "2f12de9832044958b45af70d0d091d35",
+          "226b67a6c70240e18cc7087ab0c70e6c"
         ],
-        "Left": 1955.8543620549431,
-        "Top": 690.75394909868783,
-        "Width": 987.46162838402734,
-        "Height": 215.39725834856574,
+        "Left": 1949.6447812846391,
+        "Top": 842.197912850548,
+        "Width": 701.8238970573384,
+        "Height": 284.91682112970091,
         "FontSize": 36.0,
-        "InitialTop": 743.75394909868783,
+        "InitialTop": 895.197912850548,
         "InitialHeight": 188.39725834856574,
         "TextblockHeight": 43.0,
         "Background": "#FFC1D676"
@@ -1484,14 +1416,16 @@
           "e322cbd9ee3a4a8e8f48d74f7ae63a1d",
           "a4621d555d28490197123a6417d8c5ee",
           "23d977b18a6c4424959668177de07f20",
-          "f87f15d20113416dac9d8a5758099c59"
+          "f87f15d20113416dac9d8a5758099c59",
+          "1f411cae78b240f8a4ebeb1563bd6e39",
+          "874848a0d93f4875b1acd500bc06bb38"
         ],
         "Left": 295.30938902697244,
-        "Top": 1106.6929061981393,
-        "Width": 1087.0211804087139,
-        "Height": 264.57412711271922,
+        "Top": 1097.8818054975038,
+        "Width": 1528.5163206247419,
+        "Height": 273.38522781335473,
         "FontSize": 36.0,
-        "InitialTop": 1159.6929061981393,
+        "InitialTop": 1150.8818054975038,
         "InitialHeight": 263.57412711271922,
         "TextblockHeight": 43.0,
         "Background": "#FF848484"
@@ -1511,8 +1445,8 @@
         "Background": "#FFC1D676"
       }
     ],
-    "X": -733.5621305314753,
-    "Y": -664.06161749442492,
-    "Zoom": 0.9283739810015148
+    "X": 665.469513025859,
+    "Y": -133.88953376537626,
+    "Zoom": 0.47308145657056677
   }
 }
