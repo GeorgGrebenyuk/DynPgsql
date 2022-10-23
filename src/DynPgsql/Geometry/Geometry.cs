@@ -4,27 +4,51 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using aj = Autodesk.DesignScript.Geometry;
+using dr = Autodesk.DesignScript.Runtime;
 
 namespace DynPgsql.Geometry
 {
+    /// <summary>
+    /// Class for working with geometry from Dynamo to Pgsql
+    /// </summary>
     public class Geometry
     {
         public string geom;
         
-
         private string GetPointZ(aj.Point point)
         {
             return $"{point.X} {point.Y} {point.Z}";
         }
-        public Geometry (aj.Point point)
+        private string GetPoint(aj.Point point)
         {
-            this.geom = $"POINT ({GetPointZ(point)})";
+            return $"{point.X} {point.Y}";
         }
-        public Geometry(aj.Line line)
+        /// <summary>
+        /// Create postgis geometry as Point in 3D
+        /// </summary>
+        /// <param name="point"></param>
+        /// <param name="is_3d">Use 3D data or not</param>
+        public Geometry (aj.Point point, bool is_3d = false)
         {
-            this.geom = $"LINESTRING ({GetPointZ(line.StartPoint)},{GetPointZ(line.EndPoint)})";
+            if (is_3d) this.geom = $"POINT Z({GetPointZ(point)})";
+            else this.geom = $"POINT ({GetPoint(point)})";
         }
-        public Geometry (aj.PolyCurve poly_curve)
+        /// <summary>
+        /// Create postgis geometry as Line
+        /// </summary>
+        /// <param name="line"></param>
+        /// <param name="is_3d">Use 3D data or not</param>
+        public Geometry(aj.Line line, bool is_3d = false)
+        {
+            if (is_3d) this.geom = $"LINESTRING Z({GetPointZ(line.StartPoint)},{GetPointZ(line.EndPoint)})";
+            else this.geom = $"LINESTRING ({GetPoint(line.StartPoint)},{GetPoint(line.EndPoint)})";
+        }
+        /// <summary>
+        /// Create postgis geometry as Polyline
+        /// </summary>
+        /// <param name="poly_curve"></param>
+        /// <param name="is_3d">Use 3D data or not</param>
+        public Geometry (aj.PolyCurve poly_curve, bool is_3d = false)
         {
             aj.Curve[] collection = poly_curve.Curves();
             List<string> coords = new List<string>();
@@ -35,17 +59,24 @@ namespace DynPgsql.Geometry
                 if (!pnts_last.Contains(curve.StartPoint)) 
                 {
                     pnts_last.Add(curve.StartPoint);
-                    coords.Add($"{GetPointZ(curve.StartPoint)}");
 
+                    if (is_3d) coords.Add($"{GetPointZ(curve.StartPoint)}");
+                    else coords.Add($"{GetPoint(curve.StartPoint)}");
                 }
                 if (!pnts_last.Contains(curve.EndPoint)) 
                 {
-                    pnts_last.Add(curve.EndPoint);
-                    coords.Add($"{GetPointZ(curve.EndPoint)}");
+                    if (is_3d) coords.Add($"{GetPointZ(curve.EndPoint)}");
+                    else coords.Add($"{GetPoint(curve.EndPoint)}");
                 }
             }
-            this.geom = $"LINESTRING ({String.Join(",", coords)})";
+
+            if (is_3d) this.geom = $"LINESTRING Z({String.Join(",", coords)})";
+            else this.geom = $"LINESTRING ({String.Join(",", coords)})";
         }
+        /// <summary>
+        /// Create postgis geometry as Mesh-data (PolyHedralSurface) in 3D
+        /// </summary>
+        /// <param name="solid"></param>
         public Geometry (aj.Solid solid)
         {
             aj.Face[] solid_faces = solid.Faces;
@@ -63,6 +94,7 @@ namespace DynPgsql.Geometry
             }
             this.geom = $"POLYHEDRALSURFACE Z ({String.Join(",", faces_geom)})";
         }
+        [dr.IsVisibleInDynamoLibrary(false)]
         public Geometry (aj.Mesh m)
         {
             //

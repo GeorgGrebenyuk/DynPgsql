@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace DynPgsql.Geometry
 {
    public  class Generals
-    {
+   {
         private Generals() { }
         /// <summary>
         /// Set data geometry type in table's field (standard PostGIS types)
@@ -18,6 +18,7 @@ namespace DynPgsql.Geometry
             PointZ,
             PointZM,
             LineString,
+            LineString_Z,
             LinearRing,
             Polygon,
             MultiPoint,
@@ -29,6 +30,9 @@ namespace DynPgsql.Geometry
             TIN
 
         }
+        /// <summary>
+        /// Class to create column with geometry in Table
+        /// </summary>
         public class Geometry_column
         {
             public string name;
@@ -51,6 +55,9 @@ namespace DynPgsql.Geometry
                         break;
                     case DynPgsql.Geometry.Generals.Geometry_type.LineString:
                         this.data_type = "LINESTRING";
+                        break;
+                    case DynPgsql.Geometry.Generals.Geometry_type.LineString_Z:
+                        this.data_type = "LINESTRING Z";
                         break;
                     case DynPgsql.Geometry.Generals.Geometry_type.LinearRing:
                         this.data_type = "LINEARRING";
@@ -81,6 +88,13 @@ namespace DynPgsql.Geometry
                         break;
                 }
             }
+            /// <summary>
+            /// Create table's geometry column
+            /// </summary>
+            /// <param name="name">Name of geometry column</param>
+            /// <param name="type">Type of geometry</param>
+            /// <param name="SRID">Optional parameter, the integer code of coordinate system</param>
+            /// <param name="comment">Optional parameter, the comment to geometry column</param>
             public Geometry_column(string name, Geometry_type type, int SRID = 0, string comment = null)
             {
                 this.SRID = SRID;
