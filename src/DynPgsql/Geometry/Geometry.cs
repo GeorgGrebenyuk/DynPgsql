@@ -90,6 +90,10 @@ namespace DynPgsql.Geometry
                         $"{vertex.PointGeometry.X} {vertex.PointGeometry.Y} {vertex.PointGeometry.Z}";
                     coords.Add(p_geom);
                 }
+                var vert_0 = face.Vertices[0];
+                coords.Add($"{vert_0.PointGeometry.X} " +
+                    $"{vert_0.PointGeometry.Y} " +
+                    $"{vert_0.PointGeometry.Z}");
                 faces_geom.Add("((" + String.Join(",", coords) + "))");
             }
             this.geom = $"POLYHEDRALSURFACE Z ({String.Join(",", faces_geom)})";
